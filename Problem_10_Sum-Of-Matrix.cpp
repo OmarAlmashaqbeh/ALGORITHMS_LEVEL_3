@@ -50,6 +50,6 @@ int main()
 	fillMatrixRandomly(arr, 3, 3);
 	cout << "Matrix1\n";
 	printMatrix(arr, 3, 3);
-	cout << "\n\nSum of Matrix1 = " << sumOfMatrix(arr, 3, 3);;
+	cout << "\n\nSum of Matrix1 = " << sumOfMatrix(arr, 3, 3) << endl;
 	return 0;
 }

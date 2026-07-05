@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <ctime>
 
 using namespace std;
 
@@ -40,7 +39,6 @@ void transposeMatrix(int arr[3][3], int arrTransposed[3][3], int rows, int cols)
 
 int main()
 {
-	srand((unsigned)time(NULL));
 	int arr[3][3];
 	int arrTransposed[3][3];
 	fillMatrixWithOrderedNumbers(arr, 3, 3);

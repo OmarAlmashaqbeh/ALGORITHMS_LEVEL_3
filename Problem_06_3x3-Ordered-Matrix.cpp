@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <ctime>
 
 using namespace std;
 
@@ -29,7 +28,6 @@ void printMatrix(int arr[3][3], int rows, int cols)
 
 int main()
 {
-	srand((unsigned)time(NULL));
 	int arr[3][3];
 	fillMatrixWithOrderedNumbers(arr, 3, 3);
 	cout << "The following is a 3x3 random matrix:\n";

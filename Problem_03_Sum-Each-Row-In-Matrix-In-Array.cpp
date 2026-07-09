@@ -9,61 +9,61 @@ int getRandomNumber(int From, int To)
 	int randNum = rand() % (To - From + 1) + From;
 	return randNum;
 }
-void fillMatrixRandomly(int arr[3][3], int rows, int cols)
+void fillMatrixRandomly(int matrix[3][3], int rows, int cols)
 {
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			arr[i][j] = getRandomNumber(1, 100);
+			matrix[i][j] = getRandomNumber(1, 100);
 		}
 	}
 }
-void printMatrix(int arr[3][3], int rows, int cols)
+void printMatrix(int matrix[3][3], int rows, int cols)
 {
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
 		{
-			cout << setw(3) << arr[i][j] << "  ";
+			cout << setw(3) << matrix[i][j] << "  ";
 		}
 		cout << "\n";
 	}
 }
-int rowSum(int arr[3][3], int rowNumber, int cols)
+int rowSum(int matrix[3][3], int rowNumber, int cols)
 {
 	int sum = 0;
 	for (int i = 0; i < cols; i++)
 	{
-		sum += arr[rowNumber][i];
+		sum += matrix[rowNumber][i];
 	}
 	return sum;
 }
-void sumMatixRowsInArry(int arr[3][3], int arrSum[3], int rows, int cols)
+void sumMatixRowsInArry(int matrix[3][3], int matrixSum[3], int rows, int cols)
 {
 	for (int i = 0; i < rows; i++)
 	{
-		arrSum[i] = rowSum(arr, i, cols);
+		matrixSum[i] = rowSum(matrix, i, cols);
 	}
 }
-void printRowsSumInArray(int arrSum[], int rows)
+void printRowsSumInArray(int matrixSum[], int rows)
 {
 	cout << "\nThe following are the sum of each row in the matrix:\n";
 	for (int i = 0; i < rows; i++)
 	{
-		cout << "Row " << i + 1 << " Sum = " << arrSum[i] << endl;
+		cout << "Row " << i + 1 << " Sum = " << matrixSum[i] << endl;
 	}
 }
 
 int main()
 {
 	srand((unsigned)time(NULL));
-	int arr[3][3];
-	int arrSum[3];
-	fillMatrixRandomly(arr, 3, 3);
+	int matrix[3][3];
+	int matrixSum[3];
+	fillMatrixRandomly(matrix, 3, 3);
 	cout << "The following is a 3x3 random matrix:\n";
-	printMatrix(arr, 3, 3);
-	sumMatixRowsInArry(arr, arrSum, 3, 3);
-	printRowsSumInArray(arrSum, 3);
+	printMatrix(matrix, 3, 3);
+	sumMatixRowsInArry(matrix, matrixSum, 3, 3);
+	printRowsSumInArray(matrixSum, 3);
 	return 0;
 }

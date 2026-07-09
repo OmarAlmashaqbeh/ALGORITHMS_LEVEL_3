@@ -9,35 +9,35 @@ int getRandomNumber(int From, int To)
 	int randNum = rand() % (To - From + 1) + From;
 	return randNum;
 }
-void fillMatrixRandomly(int arr[3][3], int rows, int cols)
+void fillMatrixRandomly(int matrix[3][3], int rows, int cols)
 {
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			arr[i][j] = getRandomNumber(1, 10);
+			matrix[i][j] = getRandomNumber(1, 10);
 		}
 	}
 }
-void printMatrix(int arr[3][3], int rows, int cols)
+void printMatrix(int matrix[3][3], int rows, int cols)
 {
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
 		{
-			printf(" %0*d ", 2, arr[i][j]);
+			printf(" %0*d ", 2, matrix[i][j]);
 		}
 		cout << "\n";
 	}
 }
-int sumOfMatrix(int arr[3][3], int rows, int cols)
+int sumOfMatrix(int matrix[3][3], int rows, int cols)
 {
 	int sum = 0;
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
 		{
-			sum += arr[i][j];
+			sum += matrix[i][j];
 		}
 	}
 	return sum;
@@ -46,10 +46,10 @@ int sumOfMatrix(int arr[3][3], int rows, int cols)
 int main()
 {
 	srand((unsigned)time(NULL));
-	int arr[3][3];
-	fillMatrixRandomly(arr, 3, 3);
+	int matrix[3][3];
+	fillMatrixRandomly(matrix, 3, 3);
 	cout << "Matrix1\n";
-	printMatrix(arr, 3, 3);
-	cout << "\n\nSum of Matrix1 = " << sumOfMatrix(arr, 3, 3) << endl;
+	printMatrix(matrix, 3, 3);
+	cout << "\n\nSum of Matrix1 = " << sumOfMatrix(matrix, 3, 3) << endl;
 	return 0;
 }
